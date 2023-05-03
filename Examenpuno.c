@@ -1,54 +1,53 @@
 #include <stdio.h>
 
-int main() {
-    //Variables que se van a usar, n representa el numero ingresado por el usuario, i sera la variable contadora y hex es un arreglo.
-    int n, hex[999], i = 0;
-    printf("Ingrese un numero entero positivo:");
-    scanf("%d", &n);
-  while (n!=0)
+int main(){
+	
+	int n, i = 0, hexd[999]; //Declaramos nuestras variables a usar.
+    
+    printf("Ingresa un numero en sistema decimal: ");
+    scanf("%i",&n);
+    
+     while (n!=0)
      {
-           hex[i] = n%16; //guarda el residuo del valor de n entre 16 al ser un arreglo.
-           n = n /16; //divide el numero n por sigo mismo por 16.
-           i++; //Dice que la variable de conteo va de manera positiva
+           hexd[i] = n%16; //Esta linea es para guardar el residuo del valor de n entre 16. En un arreglo.
+           n = n /16; // Esta division es para modificar en valor de n en la proxima repeticion del while.
+           i++; // Para moficicar el valor de i en el arreglo hexadecimal en la siguiente repeticion del while.
      }
     
-    return 0;
-}
-i--;
-printf("El numero ingresado convertido a hexadecimal es: ");
-//Inicio del segundo caso
-while (i>=0) //Imprimir los numeros guardados en el arreglo.
-{
-//Uso del switch case pedendiendo los distintos casos del arreglo
-switch(hexd[i]) 
-
-{
-case 10:
-printf("A");
-break;
-case 11:
-printf("B");
-break;
-case 12:
-printf("C");
-break;
-case 13:
-printf("D");
-break;
-case 14:
-printf("E");
-break;
-case 15:
-printf("F");
-break;
-default:
-///Si el numero es diferente del 10 al 15 solamente pone lo que hay en el arreglo osea uno que va del 0 al 9./
-printf("%i",hexd[i]); 
-break;
-} 
-//Variable contadora va en orden descendente.
-i--;
-}
-printf("\n");
-return 0;
+	i--;
+	printf("Resultado en Hexadecimal: ");
+	 
+     while (i>=0) //Este while se usa para imprimir los valores guardados en el arreglo hexadecimal.
+     {
+           switch(hexd[i]) 
+		   /*Este switch sirve evaluar los diferentes casos posibles, si el numero guardado en el arreglo
+		    es 10,11,12,13,14 0 15, se imprimira la correspondiente letra para cada caso*/
+           {
+                             case 10:
+                                  printf("A");
+                             break;
+                             case 11:
+                                  printf("B");
+                             break;
+                             case 12:
+                                  printf("C");
+                             break;
+                             case 13:
+                                  printf("D");
+                             break;
+                             case 14:
+                                  printf("E");
+                             break;
+                             case 15:
+                                  printf("F");
+                             break;
+                             default:
+                                   printf("%i",hexd[i]); /*Si es un numero diferente del 10 al 15 
+								   solamente pone lo que hay en el arreglo osea uno que va del 0 al 9.*/
+                             break;
+           } 
+           i--;
+     }
+     printf("\n");
+	return 0;
 }
