@@ -1,17 +1,51 @@
 #include <stdio.h>
 
 int main() {
-    int n;
+    //Variables que se van a usar, n representa el numero ingresado por el usuario, i sera la variable contadora y hex es un arreglo.
+    int n, hex[999], i = 0;
     printf("Ingrese un numero entero positivo:");
     scanf("%d", &n);
-    if (n>=0)
-    {
-        
-    }
-    else
-    {
-    printf("El numero ingresado no cumple con las condiciones.");
-    }
+  while (n!=0)
+     {
+           hex[i] = n%16; //guarda el residuo del valor de n entre 16 al ser un arreglo.
+           n = n /16; //divide el numero n por sigo mismo por 16.
+           i++; //Dice que la variable de conteo va de manera positiva
+     }
     
     return 0;
+}
+i--;
+printf("El numero ingresado convertido a hexadecimal es: ");
+//Inicio del segundo caso
+while (i>=0) //Imprimir los numeros guardados en el arreglo.
+{
+switch(hexd[i]) 
+
+{
+case 10:
+printf("A");
+break;
+case 11:
+printf("B");
+break;
+case 12:
+printf("C");
+break;
+case 13:
+printf("D");
+break;
+case 14:
+printf("E");
+break;
+case 15:
+printf("F");
+break;
+default:
+printf("%i",hexd[i]); 
+break;
+} 
+i--;
+}
+printf("\n");
+return 0;
 }
