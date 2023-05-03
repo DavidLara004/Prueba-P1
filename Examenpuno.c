@@ -19,6 +19,7 @@ printf("El numero ingresado convertido a hexadecimal es: ");
 //Inicio del segundo caso
 while (i>=0) //Imprimir los numeros guardados en el arreglo.
 {
+//Uso del switch case pedendiendo los distintos casos del arreglo
 switch(hexd[i]) 
 
 {
@@ -41,9 +42,11 @@ case 15:
 printf("F");
 break;
 default:
+///Si el numero es diferente del 10 al 15 solamente pone lo que hay en el arreglo osea uno que va del 0 al 9./
 printf("%i",hexd[i]); 
 break;
 } 
+//Variable contadora va en orden descendente.
 i--;
 }
 printf("\n");
